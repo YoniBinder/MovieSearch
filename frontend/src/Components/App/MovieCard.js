@@ -35,23 +35,20 @@ export default function MovieCard({ movie }) {
         {movieDetails ? (
           <div className="bg-dark text-light">
             <Modal.Header closeButton closeVariant="white">
-              <Modal.Title >
-                
-                  {movieDetails.Title}
-                
-            </Modal.Title>
+              <Modal.Title>{movieDetails.Title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            <div>Released: {movieDetails.Released}</div>
-            <div>Director: {movieDetails.Director}</div>
-            <div>Actors: {movieDetails.Actors}</div>
-            <div>Language: {movieDetails.Language}</div> 
-            <br/><p>{movieDetails.Plot}</p>     
+              <div>Released: {movieDetails.Released}</div>
+              <div>Director: {movieDetails.Director}</div>
+              <div>Actors: {movieDetails.Actors}</div>
+              <div>Language: {movieDetails.Language}</div>
+              <br />
+              <p>{movieDetails.Plot}</p>
             </Modal.Body>
           </div>
         ) : (
-          <div className="text-center">
-            <div className="spinner-border" role="status">
+          <div className="text-center bg-dark">
+            <div className="spinner-border text-light" role="status">
               <span className="sr-only"></span>
             </div>
           </div>
