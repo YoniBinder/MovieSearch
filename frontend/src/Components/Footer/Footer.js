@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="row">
                 <div className="col-md-12">
                     <div className="footer p-3 mt-4 text-center bg-warning">
-                       This site built by Yoni Binder
+                       @2021 This site was designed by Yoni Binder
           
                     </div>
                 </div>
