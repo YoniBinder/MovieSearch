@@ -6,7 +6,7 @@ import axios from "axios";
 function App() {
   const [movies, setMovies] = useState();
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   const InputRef = useRef();
 
@@ -17,12 +17,11 @@ function App() {
     axios
       .get(`http://localhost:5000/movies/${searchInput}/${currentPage}`)
       .then((res) => {
-        console.log(res.data)
-        if(res.data.Response==="True"){
+        console.log(res.data);
+        if (res.data.Response === "True") {
           localStorage.setItem("movies", JSON.stringify(res.data));
           setMovies(res.data);
-        }
-        else{
+        } else {
           setMessage(res.data.Error);
           setMovies(false);
         }
@@ -62,27 +61,21 @@ function App() {
       <div className="jumbotron jumbotron-fluid mt-5 text-center">
         <div className="container">
           <h3 className="mb-3">Please choose a movie</h3>
-          <form onSubmit={(event)=>onSubmit(event)}>
-          <input
-            type="text"
-            className="w-40"
-            name="searchText"
-            placeholder="Search here..."
-            ref={InputRef}
-          />
-          <br />
-          <button
-            type="submit"
-            className="btn btn-dark btn-bg mt-3"
-          >
-            Search
-          </button>
+          <form onSubmit={(event) => onSubmit(event)}>
+            <input
+              type="text"
+              className="w-40"
+              name="searchText"
+              placeholder="Search here..."
+              ref={InputRef}
+            />
+            <br />
+            <button type="submit" className="btn btn-dark btn-bg mt-3">
+              Search
+            </button>
           </form>
-          
-          <div className="text-danger mt-3">
-            {message}
-          </div>
-          
+
+          <div className="text-danger mt-3">{message}</div>
         </div>
       </div>
       <br />
